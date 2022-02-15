@@ -3,8 +3,7 @@
     src: url('fonts/Lovelo-LineBold.eot');
     src: url('fonts/Lovelo-LineBold.eot?#iefix') format('embedded-opentype'),
     url('fonts/Lovelo-LineBold.woff2') format('woff2'),
-    url('fonts/Lovelo-LineBold.woff') format('woff'),
-    url('fonts/Lovelo-LineBold.ttf') format('truetype');
+    url('fonts/Lovelo-LineBold.woff') format('woff');
 }
 
 /*
@@ -39,9 +38,19 @@
     background-color: rgb(126, 126, 126);
 }
 .movies{
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
     overflow-y: scroll;
 }
+@media screen and (min-width: 600px) {
+    .movies {
+        padding-left: 16rem;
+    }
+  }
 .movies .card{    
     scroll-snap-align: center;
+}
+@media screen and (min-width: 600px) {
+.movies .card{
+    scroll-snap-align: start;
+}
 }
