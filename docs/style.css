@@ -1,0 +1,47 @@
+@font-face {
+    font-family: Lovelo;
+    src: url('fonts/Lovelo-LineBold.eot');
+    src: url('fonts/Lovelo-LineBold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Lovelo-LineBold.woff2') format('woff2'),
+    url('fonts/Lovelo-LineBold.woff') format('woff'),
+    url('fonts/Lovelo-LineBold.ttf') format('truetype');
+}
+
+
+
+/*
+=======================
+        Navbar
+=======================
+*/
+.navbar-brand{
+    font-family: 'Lovelo';
+    font-size: 2.2em;
+}
+
+.navbar-brand span:first-of-type{
+    color: #f9fdff;
+    text-shadow: 0px 0px 5px #55aedf, 0px 0px 10px #55aedf, 0px 0px 20px #55aedf;
+}
+.navbar-brand span:nth-last-of-type(1){
+    color: #ffeef0;
+    text-shadow: 0px 0px 5px #ff001b, 0px 0px 10px #ff001b, 0px 0px 20px #ff001b;
+}
+.nav-link{
+    color: gray;
+}
+.nav-link:hover{
+    background-color: gray;
+    color: white!important;
+}
+.search-button{
+    border: 3px solid gray;
+}
+.carousel-caption{
+    position: absolute;
+    right: 15%;
+    bottom: 3rem;
+    left: 15%;
+    background-color: rgba(0, 0, 0, 0.521);  
+    backdrop-filter: blur(5px);
+}
