@@ -7,8 +7,6 @@
     url('fonts/Lovelo-LineBold.ttf') format('truetype');
 }
 
-
-
 /*
 =======================
         Navbar
@@ -37,11 +35,13 @@
 .search-button{
     border: 3px solid gray;
 }
-.carousel-caption{
-    position: absolute;
-    right: 15%;
-    bottom: 3rem;
-    left: 15%;
-    background-color: rgba(0, 0, 0, 0.521);  
-    backdrop-filter: blur(5px);
+.view-more{
+    background-color: rgb(126, 126, 126);
+}
+.movies{
+    scroll-snap-type: x proximity;
+    overflow-y: scroll;
+}
+.movies .card{    
+    scroll-snap-align: center;
 }
