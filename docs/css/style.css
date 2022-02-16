@@ -1,9 +1,9 @@
 @font-face {
     font-family: Lovelo;
-    src: url('fonts/Lovelo-LineBold.eot');
-    src: url('fonts/Lovelo-LineBold.eot?#iefix') format('embedded-opentype'),
-    url('fonts/Lovelo-LineBold.woff2') format('woff2'),
-    url('fonts/Lovelo-LineBold.woff') format('woff');
+    src: url('../fonts/Lovelo-LineBold.eot');
+    src: url('../fonts/Lovelo-LineBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lovelo-LineBold.woff2') format('woff2'),
+    url('../fonts/Lovelo-LineBold.woff') format('woff');
 }
 
 /*
@@ -43,9 +43,12 @@
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
     scroll-behavior: smooth;
+    width: auto;
 }
 .movies .card{    
     scroll-snap-align: center;
+    overflow: visible!important;
+    margin: 1rem;
 }
 @media screen and (min-width: 600px) {
     .movies .card{
