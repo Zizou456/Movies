@@ -12,7 +12,7 @@
 =======================
 */
 .navbar-brand{
-    font-family: 'Lovelo';
+    font-family: 'Lovelo', sans-serif;
     font-size: 2.2em;
 }
 
@@ -39,18 +39,19 @@
 }
 .movies{
     scroll-snap-type: x mandatory;
-    overflow-y: scroll;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
 }
-@media screen and (min-width: 600px) {
-    .movies {
-        padding-left: 16rem;
-    }
-  }
 .movies .card{    
     scroll-snap-align: center;
 }
 @media screen and (min-width: 600px) {
-.movies .card{
-    scroll-snap-align: start;
+    .movies .card{
+        scroll-snap-align: start;
+    }
 }
+.movies::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
