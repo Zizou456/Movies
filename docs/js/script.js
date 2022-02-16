@@ -3,6 +3,7 @@ $(document).ready(function() {
         item:5,
         loop:false,
         slideMove:1,
+        adaptiveHeight:true,
         slideMargin:20,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
         speed:600,
