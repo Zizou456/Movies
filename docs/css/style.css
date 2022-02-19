@@ -68,7 +68,7 @@
 }
 .left{
     height: 100vh;
-    background-image: url(/img/Theater.jpg);
+    background-image: url(../img/Theater.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
