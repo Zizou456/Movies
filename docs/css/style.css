@@ -14,6 +14,7 @@
 .navbar-brand{
     font-family: 'Lovelo', sans-serif;
     font-size: 2.2em;
+    user-select: none;
 }
 
 .navbar-brand span:first-of-type{
@@ -34,18 +35,11 @@
 .search-button{
     border: 3px solid gray;
 }
-.view-more{
-    background-color: rgb(126, 126, 126);
-    
-}
-/* #responsive .card{    
-    width: 75%!important;
-    margin: auto;
-} */
-/* .lSAction>a {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-} */
+/*
+=======================
+        Cards
+=======================
+*/
 @media only screen and (max-width: 592px) {
     #responsive .card{    
         width: 60%!important;
@@ -61,5 +55,45 @@
     #responsive .card{    
         width: 75%!important;
         margin: auto;
+    }
+}
+/*
+=======================
+        Login
+=======================
+*/
+.login {
+    height: 100vh;
+    width: 100vw;
+}
+.left{
+    height: 100vh;
+    background-image: url(/img/Theater.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.right{
+    height: 100vh;
+}
+@media only screen and (max-width: 768px) {
+    .right{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .right{
+        width: 50%;
+    }
+    .left{
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .right{
+        width: 40%;
+    }
+    .left{
+        width: 60%;
     }
 }
