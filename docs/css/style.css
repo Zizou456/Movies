@@ -41,7 +41,7 @@
 =======================
 */
 @media only screen and (max-width: 592px) {
-    #responsive .card{    
+    .responsive .card{    
         width: 60%!important;
         margin: auto;
     }
@@ -52,7 +52,7 @@
     }
 }
 @media only screen and (max-width: 572px) {
-    #responsive .card{    
+    .responsive .card{    
         width: 75%!important;
         margin: auto;
     }
