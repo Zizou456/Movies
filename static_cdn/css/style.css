@@ -1,0 +1,118 @@
+@font-face {
+    font-family: Lovelo;
+    src: url('../fonts/Lovelo-LineBold.eot');
+    src: url('../fonts/Lovelo-LineBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lovelo-LineBold.woff2') format('woff2'),
+    url('../fonts/Lovelo-LineBold.woff') format('woff');
+}
+
+/*
+=======================
+        Navbar
+=======================
+*/
+.navbar-brand{
+    font-family: 'Lovelo', sans-serif;
+    font-size: 2.2em;
+    user-select: none;
+}
+
+.navbar-brand span:first-of-type{
+    color: #f9fdff;
+    text-shadow: 0px 0px 5px #55aedf, 0px 0px 10px #55aedf, 0px 0px 20px #55aedf;
+}
+.navbar-brand span:nth-last-of-type(1){
+    color: #ffeef0;
+    text-shadow: 0px 0px 5px #ff001b, 0px 0px 10px #ff001b, 0px 0px 20px #ff001b;
+}
+.nav-link{
+    color: gray;
+}
+.nav-link:hover{
+    background-color: gray;
+    color: white!important;
+}
+.search-button{
+    border: 3px solid gray;
+}
+/*
+=======================
+        Cards
+=======================
+*/
+@media only screen and (max-width: 592px) {
+    .responsive .card{    
+        width: 60%!important;
+        margin: auto;
+    }
+    .lSAction>a {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+        opacity: 1;
+    }
+}
+@media only screen and (max-width: 572px) {
+    .responsive .card{    
+        width: 75%!important;
+        margin: auto;
+    }
+}
+.responsive .card{
+    position: relative;
+}
+.favorite{
+    position: absolute;
+    padding: 0.5rem;
+    top: 1%;
+    right: 1%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.801);
+}
+/*
+=======================
+        Login
+=======================
+*/
+.login {
+    height: 100vh;
+    width: 100vw;
+}
+.left{
+    height: 100vh;
+    background-image: url('/static/img/Theater.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.right{
+    height: 100vh;
+}
+@media only screen and (max-width: 768px) {
+    .right{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .right{
+        width: 50%;
+    }
+    .left{
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .right{
+        width: 40%;
+    }
+    .left{
+        width: 60%;
+    }
+}
+/*
+========================
+        Register
+========================
+*/
+.leftregister{
+    background-image: url('/static/img/LivingRoom.jpg');
+}

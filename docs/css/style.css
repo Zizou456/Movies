@@ -57,6 +57,17 @@
         margin: auto;
     }
 }
+.responsive .card{
+    position: relative;
+}
+.favorite{
+    position: absolute;
+    padding: 0.5rem;
+    top: 1%;
+    right: 1%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.801);
+}
 /*
 =======================
         Login
@@ -96,4 +107,12 @@
     .left{
         width: 60%;
     }
+}
+/*
+========================
+        Register
+========================
+*/
+.leftregister{
+    background-image: url(../img/LivingRoom.jpg);
 }
