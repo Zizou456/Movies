@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/lightslider.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="./js/lightslider.min.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>What Now ?</title>
+</head>
+
+<body>
+    <a class="close-navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbar"></a>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light flex-lg-nowrap flex-wrap p-3 px-lg-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!-- <img src="Logo.svg" alt="" width="72" class="img-fluid d-inline-block align-text-center"> -->
+                <span>What</span><span> Now ?</span>
+            </a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbar">
+                <!-- Change This -->
+                <form class="d-none mt-3 mt-lg-0 d-lg-flex me-auto w-50 ms-5 align-self-stretch">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn search-button" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav text-center fs-5 fw-bold  ms-1 gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#movies">Suggetions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-nowrap" href="login.html">Login | Sign up</a>
+                    </li>
+                </ul>
+                <form class="d-flex justify-content-center mt-3 mt-lg-0 d-lg-none">
+                    <input class="form-control me-2 w-50" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn search-button" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <br><br>
+
+    <div class="container mb-5">
+        <div class="card">
+            <div class="card-body p-4">
+                <div class="row align-items-center justify-content-center justify-content-md-start gx-5">
+                    <div class="col-auto">
+                        <img src="img/LivingRoom.jpg" alt="" class="rounded-circle Settings-image  mb-md-0 mb-4">
+                    </div>
+                    <div class="col-md-5 fs-5">
+                        <h3>Username</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse expedita enim ea illum at animi
+                            nesciunt quam perspiciatis officia eius sed sunt maiores qui, ratione consectetur!
+                            Necessitatibus alias ducimus magn</p>
+                    </div>
+                    <div class="col-auto mx-auto">
+                        <canvas id="myChart" class="Settings-image"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container">
+        <table class="table table-hover table-bordered caption-top table-fit">
+            <caption>List of Movies</caption>
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" style="width:auto;">Poster</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Realse Date</th>
+                    <th scope="col">Ratting</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td style="width:10%;"><img src="/img/Banner/Inception.jpg" alt="" class="profile-poster"></td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+        </table>
+    </div> -->
+
+    <div class="container">
+        <h1>Liked Movies</h1>
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="card mb-3" >
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/img/Banner/Inception.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/img/Banner/Inception.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card mb-3" >
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/img/Banner/Inception.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/img/Banner/Inception.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

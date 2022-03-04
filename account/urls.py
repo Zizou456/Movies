@@ -3,9 +3,9 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     #Change Password URL
-    path('password_change/',auth_views.PasswordChangeView.as_view(template_name='account/password_management/password_change.html'),name='password_change'),
+    path('password/',auth_views.PasswordChangeView.as_view(template_name='account/password_management/password_change.html'),name='password_change'),
     #Password Change Done
-    path('password_change/done/',auth_views.PasswordChangeDoneView.as_view(template_name='account/password_management/password_change_done.html'),name='password_change_done'),
+    path('password/done/',auth_views.PasswordChangeDoneView.as_view(template_name='account/password_management/password_change_done.html'),name='password_change_done'),
     #Reset Password URL
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name='account/password_management/password_reset.html'), name='password_reset'),
     #Reset Password Request Sent
