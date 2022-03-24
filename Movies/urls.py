@@ -17,16 +17,38 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path,include
+from django.contrib.auth import views as auth_views
 from mywebsite.views import (home_view)
 from account.views import (register_view,login_view,logout_view)
 
 urlpatterns = [
+    #admin
     path('admin/', admin.site.urls),
+    #home
     path('', home_view, name='home'),
+    #signup
     path('register/', register_view, name="register"),
+    #login
     path('login/', login_view, name="login"),
+    #logout
     path('logout/', logout_view, name="logout"),
-    path('',include('account.urls')),
+    # Reset Password URL
+    path('password_reset/',
+         auth_views.PasswordResetView.as_view(template_name='account/password_management/password_reset.html'),
+         name='password_reset'),
+    # Reset Password Request Sent
+    path('password_reset/done/', auth_views.PasswordResetCompleteView.as_view(
+        template_name='account/password_management/password_reset_done.html'), name='password_reset_done'),
+    # Reset Password Form
+    path('password_reset/reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(
+        template_name='account/password_management/password_reset_form.html'), name='password_reset_confirm'),
+    # Reset Password Done
+    path('password_reset/reset/done/', auth_views.PasswordResetCompleteView.as_view(
+        template_name='account/password_management/password_reset_complete.html'), name='password_reset_complete'),
+    #Profile
+    path('profile/',include('account.urls',namespace='profile')),
+    #Movie
+    path('Movie/',include('movie.urls',namespace='movie')),
 ]
 
 if settings.DEBUG:

@@ -38,6 +38,7 @@ AUTHENTICATION_BACKENDS = (
 INSTALLED_APPS = [
     'mywebsite',
     'account',
+    'movie',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -146,3 +147,5 @@ TEMP = os.path.join(BASE_DIR, 'media_cdn/temp')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+BASE_URL =  "http://127.0.0.1:8000/"

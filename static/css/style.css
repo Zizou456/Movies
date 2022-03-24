@@ -116,3 +116,28 @@
 .leftregister{
     background-image: url('/static/img/LivingRoom.jpg');
 }
+/*
+========================
+        Settings
+========================
+*/
+.Settings{
+    box-shadow: 0 0 30px 0 rgb(82 63 105 / 5%);
+}
+.Settings .card-header{
+    background-color: white;
+    padding: 1rem;
+}
+
+.Settings .card-header h5{
+    margin-bottom: 0;
+    font-weight: 00;
+}
+.Settings-image{
+    height: 15rem;
+    width: 15rem;
+}
+.profile-poster{
+    height: 12rem;
+    width: 8rem;
+}

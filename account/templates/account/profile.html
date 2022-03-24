@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <br><br>
+
+    <div class="container mb-5">
+        <div class="card">
+            <div class="card-body p-4">
+                <div class="row align-items-center justify-content-center justify-content-md-start gx-5">
+                    <div class="col-auto">
+                        <img src="{% static 'img/LivingRoom.jpg' %}" alt="" class="rounded-circle Settings-image  mb-md-0 mb-4">
+                    </div>
+                    <div class="col-md-5 fs-5">
+                        <h3>{{ username }}</h3>
+                        <p>{{ bio }}</p>
+                    </div>
+                    <div class="col-auto mx-auto">
+                        <canvas id="myChart" class="Settings-image"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>Liked Movies</h1>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 col-lg-4">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <img src="{% static 'img/Banner/Interstellar.jpg' %}" class="img-fluid rounded-start h-100" alt="...">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test -->
+
+        </div>
+    </div>
+
+{% endblock content %}
