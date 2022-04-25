@@ -49,6 +49,7 @@ class USER(AbstractBaseUser):
 	favorite				= ArrayField(models.CharField(max_length=20), blank=True,null=True)
 	is_staff 				= models.BooleanField(default=False)
 	is_superuser			= models.BooleanField(default=False)
+	is_active 				= models.BooleanField(default=True)
 	profile_image			= models.ImageField(max_length=255, upload_to=get_profile_image_filepath, null=True, blank=True, default=get_default_profile_image)
 
 	USERNAME_FIELD = 'email'

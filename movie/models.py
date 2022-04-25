@@ -11,7 +11,7 @@ class Genre(models.Model):
 def get_default_movie_image():
     return "posters/default.png"
 
-def get_movie_image_filepath(self):
+def get_movie_image_filepath(self,filename):
     return 'posters/' + str(self.id) + '.png'
 
 class Movie(models.Model):
@@ -25,7 +25,6 @@ class Movie(models.Model):
     rating              = models.FloatField(null=True, blank=True)
     votes               = models.FloatField(null=True, blank=True)
     poster              = models.ImageField(null=True, upload_to=get_movie_image_filepath, blank=True,default=get_default_movie_image)
-
 
     def __str__(self):
         return self.title

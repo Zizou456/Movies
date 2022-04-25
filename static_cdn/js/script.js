@@ -1,10 +1,17 @@
+$(window).load(function () {
+    setTimeout(function(){
+        console.log("Waiting 3sec for elements to load")
+    }, 3000);
+    $('#loading').hide();
+});
+
 $(document).ready(function () {
     $('.responsive').each(function () {
             $(this).lightSlider({
                 item: 5,
                 loop: false,
                 slideMove: 1,
-                adaptiveHeight: true,
+                // adaptiveHeight: true,
                 slideMargin: 20,
                 easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
                 speed: 600,
@@ -80,3 +87,22 @@ const myChart = new Chart(ctx, {
         }
     }
 });
+
+let dots = document.querySelector(".dots");
+
+// Function
+// ========
+function animate(element, className) {
+    element.classList.add(className);
+    setTimeout(() => {
+        element.classList.remove(className);
+        setTimeout(() => {
+            animate(element, className);
+        }, 500);
+    }, 2500);
+}
+
+// Execution
+// =========
+animate(dots, "dots--animate");
+

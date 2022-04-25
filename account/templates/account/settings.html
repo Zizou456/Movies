@@ -30,7 +30,7 @@
                                 </svg>
                                 Security
                             </a>
-                            <a href="" class="nav-item nav-link has-icon nav-link-faded">
+                            <a href="{% url 'profile:delete' %}" class="nav-item nav-link has-icon nav-link-faded">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="feather feather-trash-2">
@@ -51,7 +51,8 @@
 
 
             <div class="col-lg-8 mt-4 mt-lg-0">
-                <form method="GET" class="mb-3">
+                <form method="POST" class="mb-3">
+                    {% csrf_token %}
                     <div class="card Settings">
                         <div class="card-header">
                             <h5>Public Info</h5>
@@ -60,7 +61,7 @@
                             <div class="row">
                                 <div
                                     class="col-lg-4 d-flex flex-column justify-content-center d-block d-lg-none mb-4 w-75 mx-auto">
-                                    <img src="/img/LivingRoom.jpg" alt=""
+                                    <img src="{{form.initial.profile_image.url}}" alt=""
                                         class="rounded-circle Settings-image mx-auto mb-1">
                                     <input type="file" id="actual-btn" hidden />
                                     <label for="actual-btn" class="btn btn-outline-primary mt-2">Upload</label>
@@ -68,17 +69,17 @@
                                 <div class="col-lg-8">
                                     <div class="mb-2">
                                         <label for="username" class="form-label">Username</label>
-                                        <input type="text" class="form-control" id="username">
+                                        <input type="text" class="form-control" id="username" name="username" value="{{form.initial.username}}">
                                     </div>
                                     <div class="mb-lg-3">
                                         <label for="bio" class="form-label">Bio</label>
-                                        <textarea class="form-control Settings-Text" id="bio" rows="3"
-                                            maxlength="210"></textarea>
+                                        <textarea class="form-control Settings-Text" id="bio" name="bio" rows="3"
+                                            maxlength="210">{{form.initial.bio}}</textarea>
                                         <h6 class="mt-1 text-end" id="count_message"></h6>
                                     </div>
                                 </div>
                                 <div class="col-4 d-flex flex-column justify-content-center d-none d-lg-flex">
-                                    <img src="/img/LivingRoom.jpg" alt=""
+                                    <img src="{{form.initial.profile_image.url}}" alt=""
                                         class="rounded-circle Settings-image mx-auto mb-1">
                                     <input type="file" id="actual-btn" hidden />
                                     <label for="actual-btn"
@@ -88,9 +89,7 @@
                             <button type="submit" class="btn btn-primary mt-3">Save Change</button>
                         </div>
                     </div>
-                </form>
-
-                <form method="post">
+                    <br>
                     <div class="card Settings">
                         <div class="card-header">
                             <h5>Private Info</h5>
@@ -99,19 +98,19 @@
                             <div class="row mb-3">
                                 <div class="col">
                                     <label for="first_name" class="form-label">Fisrt name</label>
-                                    <input type="text" id="first_name" class="form-control" aria-label="First name">
+                                    <input type="text" id="first_name" class="form-control" aria-label="First name" disabled>
                                 </div>
                                 <div class="col">
                                     <label for="last_name" class="form-label">Last name</label>
-                                    <input type="text" id="last_name" class="form-control" aria-label="Last name">
+                                    <input type="text" id="last_name" class="form-control" aria-label="Last name" disabled>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" id="email" class="form-control" aria-label="Email">
+                                <input type="email" id="email" name="email" class="form-control" aria-label="Email" value="{{form.initial.email}}">
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" disabled>
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Subscribe to newsletter</label>
                               </div>
                             <button type="submit" class="btn btn-primary mt-3">Save Change</button>

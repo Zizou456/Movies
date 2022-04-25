@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h2>Your Suggestions</h2>
+        <div class="row">
+        {% if suggestions != null %}
+            {% for suggestion in suggestions %}
+                <div class="col-sm-12 col-lg-4">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="{{ suggestion.poster }}"
+                                     class="img-fluid rounded-start h-100"
+                                     alt="">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <a href="/Movie/{{ suggestion.id }}"><h5 class="card-title text-dark">{{ suggestion.title }}</h5></a>
+                                    <p class="card-text">{{ suggestion.overview|slice:":140" }} ...</p>
+                                    <p class="card-text"><small class="text-muted">{{ suggestion.release_date}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+    <br>
+    <br>
+{% endblock content %}

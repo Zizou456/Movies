@@ -17,7 +17,7 @@
 <div class="login d-flex">
     <div class="right d-flex justify-content-center align-items-center flex-column mx-auto vw-lg-100">
         <div class="logo mt-5 mb-auto">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <span>What</span><span> Now ?</span>
             </a>
         </div>
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </form>
-        <a href="" class="mb-auto text-decoration-none"><span class="text-dark">Already Have an account?</span> <span
+        <a href="{% url 'login' %}" class="mb-auto text-decoration-none"><span class="text-dark">Already Have an account?</span> <span
                 class="text-decoration-underline">Login</span></a>
     </div>
     <div class="left leftregister d-none d-md-inline-block"></div>

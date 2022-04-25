@@ -19,7 +19,8 @@ from django.conf.urls.static import static
 from django.urls import path,include
 from django.contrib.auth import views as auth_views
 from mywebsite.views import (home_view)
-from account.views import (register_view,login_view,logout_view)
+from account.views import (register_view,login_view,logout_view,add_favorite,remove_favorite)
+from movie.views import predict
 
 urlpatterns = [
     #admin
@@ -45,10 +46,25 @@ urlpatterns = [
     # Reset Password Done
     path('password_reset/reset/done/', auth_views.PasswordResetCompleteView.as_view(
         template_name='account/password_management/password_reset_complete.html'), name='password_reset_complete'),
+    # path('password_reset/done/',
+    #      auth_views.PasswordResetCompleteView.as_view(template_name='account/password_management/password_reset_done.html'),
+    #      name='password_reset_done'),
+    #
+    # path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    # path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
+    #
+    # path('reset/done/',
+    #      auth_views.PasswordResetCompleteView.as_view(template_name='account/password_management/password_reset_complete.html'),
+    #      name='password_reset_complete'),
     #Profile
     path('profile/',include('account.urls',namespace='profile')),
     #Movie
     path('Movie/',include('movie.urls',namespace='movie')),
+    #Add/remove movie to/from favorite
+    path('add_favorite/<movieid>/',add_favorite,name='add_favorite'),
+    path('remove_favorite/<movieid>/',remove_favorite,name='add_favorite'),
+
+    path('mysuggestions/',predict,name='mysuggestions'),
 ]
 
 if settings.DEBUG:

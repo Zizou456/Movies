@@ -4,415 +4,262 @@
     <br><br>
 
     <div class="container">
-        <h2>Your Recommendation</h2>
-        <hr>
-        <ul class="responsive">
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Death on the Nile.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Dont Look Up.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Dune.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/The Kings Man.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Spider-Man No Way Home.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/The Godfather.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Inception.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Interstellar.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-
-    <div class="container">
         <h2>Action</h2>
         <hr>
-        <ul class="responsive">
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Death on the Nile.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
+        <ul class="responsive h-100">
+            {% for movie in action %}
+                <li>
+                    <div class="card rounded-3 w-100">
+                        <img src="{{ movie.poster.url }}" class="card-img-top"
+                             alt="">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="Movie/{{ movie.id }}/">{{ movie.title }}</a></h5>
+                            {% for gener in movie.geners.all %}
+                                <span class="card-text badge rounded-3-pill bg-secondary">{{ gener.tag|lower|capfirst }}</span>
+                            {% endfor %}
+                        </div>
+                        {% if request.user.is_authenticated == True %}
+                            <div class="favorite text-center">
+                                {% if movie.id|stringformat:"i" in favorite %}
+                                    <form action="remove_favorite/{{ movie.id }}/" method="POST">
+                                        {% csrf_token %}
+                                        <label style="cursor: pointer;">
+                                            <input type="submit" name="image" value="one" style="display: none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart-fill text-danger filled-heart" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                                            </svg>
+                                        </label>
+                                    </form>
+                                {% else %}
+                                    <form action="add_favorite/{{ movie.id }}/" method="POST">
+                                        {% csrf_token %}
+                                        <label style="cursor: pointer;">
+                                            <input type="submit" name="image" value="one" style="display: none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart empty-heart" viewBox="0 0 16 16">
+                                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+                                            </svg>
+                                        </label>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Dont Look Up.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Dune.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/The Kings Man.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Spider-Man No Way Home.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/The Godfather.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Inception.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Interstellar.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
+                    <br>
+                </li>
+            {% endfor %}
         </ul>
     </div>
-
+    <br>
     <div class="container">
         <h2>Comedy</h2>
         <hr>
-        <ul class="responsive">
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Death on the Nile.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
+        <ul class="responsive h-100">
+            {% for movie in comedy %}
+                <li>
+                    <div class="card rounded-3 w-100">
+                        <img src="{{ movie.poster.url }}" class="card-img-top"
+                             alt="">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="Movie/{{ movie.id }}/">{{ movie.title }}</a></h5>
+                            {% for gener in movie.geners.all %}
+                                <span class="card-text badge rounded-3-pill bg-secondary">{{ gener.tag|lower|capfirst }}</span>
+                            {% endfor %}
+                        </div>
+                        {% if request.user.is_authenticated == True %}
+                            <div class="favorite text-center">
+                                {% if movie.id|stringformat:"i" in favorite %}
+                                    <form action="remove_favorite/{{ movie.id }}/" method="POST">
+                                        {% csrf_token %}
+                                        <label style="cursor: pointer;">
+                                            <input type="submit" name="image" value="one" style="display: none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart-fill text-danger filled-heart" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                                            </svg>
+                                        </label>
+                                    </form>
+                                {% else %}
+                                    <form action="add_favorite/{{ movie.id }}/" method="POST">
+                                        {% csrf_token %}
+                                        <label style="cursor: pointer;">
+                                            <input type="submit" name="image" value="one" style="display: none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart empty-heart" viewBox="0 0 16 16">
+                                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+                                            </svg>
+                                        </label>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Dont Look Up.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Dune.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/The Kings Man.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Spider-Man No Way Home.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/The Godfather.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Inception.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Interstellar.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
+                    <br>
+                </li>
+            {% endfor %}
         </ul>
     </div>
-
+    <br>
     <div class="container">
-        <h2>Adventure</h2>
+        <h2>Thriller</h2>
         <hr>
-        <ul class="responsive">
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Death on the Nile.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
+        <ul class="responsive h-100">
+            {% for movie in thriller %}
+                <li>
+                    <div class="card rounded-3 w-100">
+                        <img src="{{ movie.poster.url }}" class="card-img-top"
+                             alt="">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="Movie/{{ movie.id }}/">{{ movie.title }}</a></h5>
+                            {% for gener in movie.geners.all %}
+                                <span class="card-text badge rounded-3-pill bg-secondary">{{ gener.tag|lower|capfirst }}</span>
+                            {% endfor %}
+                        </div>
+                        {% if request.user.is_authenticated == True %}
+                            <div class="favorite text-center">
+                                {% if movie.id|stringformat:"i" in favorite %}
+                                    <form action="remove_favorite/{{ movie.id }}/" method="POST">
+                                        {% csrf_token %}
+                                        <label style="cursor: pointer;">
+                                            <input type="submit" name="image" value="one" style="display: none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart-fill text-danger filled-heart" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                                            </svg>
+                                        </label>
+                                    </form>
+                                {% else %}
+                                    <form action="add_favorite/{{ movie.id }}/" method="POST">
+                                        {% csrf_token %}
+                                        <label style="cursor: pointer;">
+                                            <input type="submit" name="image" value="one" style="display: none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart empty-heart" viewBox="0 0 16 16">
+                                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+                                            </svg>
+                                        </label>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Dont Look Up.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Dune.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/The Kings Man.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Spider-Man No Way Home.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/The Godfather.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Inception.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card rounded-3 w-100">
-                    <img src="{% static 'img/Banner/Interstellar.jpg' %}" class="card-img-top"
-                         alt="Spider-Man No Way Home">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Spider-Man No Way Home</h5>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Action</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Sci-Fi</span>
-                        <span class="card-text badge rounded-3-pill bg-secondary">Drama</span>
-                    </div>
-                </div>
-            </li>
+                    <br>
+                </li>
+            {% endfor %}
         </ul>
     </div>
+    <br>
+    <div class="container">
+        <h2>Drama</h2>
+        <hr>
+        <ul class="responsive h-100">
+            {% for movie in drama %}
+                <li>
+                    <div class="card rounded-3 w-100">
+                        <img src="{{ movie.poster.url }}" class="card-img-top"
+                             alt="">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="Movie/{{ movie.id }}/">{{ movie.title }}</a></h5>
+                            {% for gener in movie.geners.all %}
+                                <span class="card-text badge rounded-3-pill bg-secondary">{{ gener.tag|lower|capfirst }}</span>
+                            {% endfor %}
+                        </div>
+                        {% if request.user.is_authenticated == True %}
+                            <div class="favorite text-center">
+                                {% if movie.id|stringformat:"i" in favorite %}
+                                    <form action="remove_favorite/{{ movie.id }}/" method="POST">
+                                        {% csrf_token %}
+                                        <label style="cursor: pointer;">
+                                            <input type="submit" name="image" value="one" style="display: none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart-fill text-danger filled-heart" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                                            </svg>
+                                        </label>
+                                    </form>
+                                {% else %}
+                                    <form action="add_favorite/{{ movie.id }}/" method="POST">
+                                        {% csrf_token %}
+                                        <label style="cursor: pointer;">
+                                            <input type="submit" name="image" value="one" style="display: none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart empty-heart" viewBox="0 0 16 16">
+                                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+                                            </svg>
+                                        </label>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <br>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    <br>
+    <br>
+
+    <script>
+    $(document).on('click', '.favorite form',function (e) {
+            e.preventDefault()
+            $.ajax({
+                type: "POST",
+                url: $(this).attr('action'),
+                data: {'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: "json",
+                success: function (response) {
+                    if (response['status'] === "Removed") {
+                        $(`.favorite form[action="${this.url}"]`).replaceWith(`
+<form action="add_favorite/${ response['movieid']}/" method="POST">
+                                        {% csrf_token %}
+<label style="cursor: pointer;">
+<input type="submit" name="image" value="one" style="display: none">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+fill="currentColor"
+class="bi bi-heart empty-heart" viewBox="0 0 16 16">
+<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+</svg>
+</label>
+</form>
+                       `)
+                    } else {
+                        $(`.favorite form[action="${this.url}"]`).replaceWith(`
+<form action="remove_favorite/${ response['movieid'] }/" method="POST">
+                                        {% csrf_token %}
+<label style="cursor: pointer;">
+<input type="submit" name="image" value="one" style="display: none">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+fill="currentColor"
+class="bi bi-heart-fill text-danger filled-heart" viewBox="0 0 16 16">
+<path fill-rule="evenodd"
+d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+</svg>
+</label>
+</form>
+                       `)
+
+                    }
+                },
+                error: function (response) {
+                    console.log(response + "  FAILED")
+                }
+            });
+        })
+    </script>
+
 {% endblock content %}

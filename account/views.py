@@ -6,7 +6,10 @@ from django.conf import settings
 from django.urls import reverse_lazy
 from account.models import USER
 
-from account.forms import RegistrationForm, AccountAuthenticationForm
+from movie.views import convert_TMDB_to_id,get_movie,get_movie_info,save_movie
+from account.forms import RegistrationForm, AccountAuthenticationForm, AccountUpdateForm
+
+import json
 
 # Create your views here.
 def profile_view(request, *args, **kwargs):
@@ -21,6 +24,17 @@ def profile_view(request, *args, **kwargs):
 		context['id'] = account.id
 		context['username'] = account.username
 		context['bio'] = account.bio
+		context['profile_image']=account.profile_image.url
+		context['favorites'] = []
+		if account.favorite:
+			for favorite in account.favorite:
+				try:
+					_ = get_movie(int(favorite))
+				except:
+					_ = get_movie_info(int(favorite))
+					save_movie(favorite, _)
+					_ = get_movie(favorite)
+				context['favorites'].append(_)
 
 	context['BASE_URL'] = settings.BASE_URL
 
@@ -33,26 +47,27 @@ class Custom_Password_Change(PasswordChangeView):
 		return reverse_lazy('profile:password_change_done')
 
 def profile_settings_view(request, *args, **kwargs):
-	context = {}
-	user_id = request.user.id
-	try:
-		account = USER.objects.get(pk=user_id)
-	except USER.DoesNotExist :
-		return HttpResponse("Error 404")
-	if account:
-		context['id'] = account.id
-		context['username'] = account.username
-		context['bio'] = account.bio
-		context['email'] = account.email
-		context['profile_image'] = account.profile_image.url
+	account = USER.objects.get(id=request.user.id)
+	form = AccountUpdateForm(instance=account)
+	if request.method == 'POST':
+		form = AccountUpdateForm(request.POST, instance=account)
+		if form.is_valid():
+			form.save()
+			return redirect('profile:edit')
+	return render(request, 'account/settings.html', {'form': form})
 
-	if request.POST:
-		pass
-
-	context['BASE_URL'] = settings.BASE_URL
-
-	return render(request,"account/settings.html",context)
-
+def profile_delete(request):
+	if request.user.is_authenticated:
+		if request.POST:
+			id = request.user.id
+			try:
+				logout(request)
+				USER.objects.get(id=id).delete()
+				return redirect("home")
+			except USER.DoesNotExist:
+				return HttpResponse('Error 404')
+		else:
+			return render(request, 'account/delete.html')
 
 
 
@@ -131,5 +146,43 @@ def get_redirect_if_exists(request):
 		if request.GET.get("next"):
 			redirect = str(request.GET.get("next"))
 	return redirect
+
+
+def add_favorite(request,movieid, *args, **kwargs):
+	user_id = request.user.id
+	if request.POST:
+		try:
+			favorite = USER.objects.get(pk=user_id).favorite
+			if favorite:
+				if movieid in favorite:
+					return HttpResponse('Already Exist')
+				else:
+					favorite.append(movieid)
+			else:
+				favorite = [movieid]
+			USER.objects.filter(pk=user_id).update(favorite=favorite)
+		except USER.DoesNotExist :
+			return HttpResponse("Error 404")
+		return HttpResponse(json.dumps({"status":"Added","movieid":movieid}), content_type="application/json")
+	return HttpResponse('Error 404')
+
+
+def remove_favorite(request,movieid, *args, **kwargs):
+	user_id = request.user.id
+	if request.POST:
+		try:
+			favorite = USER.objects.get(pk=user_id).favorite
+			if favorite:
+				if movieid in favorite:
+					favorite.remove(movieid)
+				else:
+					return HttpResponse('Movie Not Found')
+			else:
+				return HttpResponse('Favorite List Empty')
+			USER.objects.filter(pk=user_id).update(favorite=favorite)
+		except USER.DoesNotExist :
+			return HttpResponse("Error 404")
+		return HttpResponse(json.dumps({"status":"Removed","movieid":movieid}), content_type="application/json")
+	return HttpResponse('Error 404')
 
 

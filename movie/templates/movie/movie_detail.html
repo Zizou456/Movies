@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <section class="pe-5 ps-2">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
+                                           src="{{ poster }}" alt="..."></div>
+                <div class="col-md-6">
+                    <div class="small mb-1"></div>
+                    <h1 class="display-5 fw-bolder">{{ title }}</h1>
+                    <div class="fs-5 mb-5">
+                        <span class="ms-1">Release date : {{ release_date }}</span>
+                        <br>
+                        <span class="ms-1">Gener : </span>
+                        {% for gener in geners %}
+                        <span>{{gener|lower|capfirst}} </span>
+                        {% endfor %}
+                        <br>
+                        <span class="ms-1">Duration : {{ duration }} mn</span>
+                        <br>
+                        <span class="ms-1">Rating : {{ rating }} | Votes : {{ votes }}</span>
+                    </div>
+                    <p class="lead">{{ overview }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <h1 class="display-6 fw-bolder">Trailer :</h1>
+    <br>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe height="700px" class="embed-responsive-item w-100" src="{{ trailer }}"
+                allowfullscreen></iframe>
+    </div>
+</div>
+
+<div style="margin-bottom: 200px;"></div>
+{% endblock content %}
